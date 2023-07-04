@@ -27,7 +27,7 @@ public class WebSeriesService {
         //use function written in Repository Layer for the same
         //Dont forget to save the production and webseries Repo
         WebSeries webSeries=webSeriesRepository.findBySeriesName(webSeriesEntryDto.getSeriesName());
-        if(webSeries==null) throw new Exception("Series is already present");
+        if(webSeries!=null) throw new Exception("Series is already present");
         WebSeries webSeries1=new WebSeries(
                 webSeriesEntryDto.getSeriesName(),
                 webSeriesEntryDto.getAgeLimit(),
